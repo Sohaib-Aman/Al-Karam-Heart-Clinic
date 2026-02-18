@@ -12,12 +12,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-card">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        <a href="#home" className="flex items-center gap-2">
-          <Heart className="h-7 w-7 text-primary animate-pulse-heart" fill="currentColor" />
+        <a href="#home" className="flex items-center gap-2 group">
+          <Heart
+            className="h-7 w-7 text-primary animate-pulse-heart group-hover:scale-110 transition-transform"
+            fill="currentColor"
+          />
           <span className="font-display text-xl font-bold text-foreground">
-            Al-Karam <span className="text-primary">Heart Clinic</span> & Diagnostic Centre, Khanewal
+            Al-Karam <span className="text-primary">Heart Clinic</span> &
+            Diagnostic Centre, Khanewal
           </span>
         </a>
 
@@ -27,9 +31,10 @@ const Navbar = () => {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="relative text-sm font-medium text-muted-foreground hover:text-primary transition-colors group py-1"
               >
                 {l.label}
+                <span className="absolute inset-x-0 bottom-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
           ))}
@@ -46,7 +51,10 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setOpen(!open)}
+        >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
