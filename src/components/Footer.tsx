@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       <div className="container mx-auto px-4">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col md:flex-row justify-around gap-12">
           {/* Brand */}
           <Reveal>
             <div className="flex items-center gap-2 mb-6">
@@ -25,26 +25,6 @@ const Footer = () => {
               service, and state-of-the-art facilities.
             </p>
           </Reveal>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-semibold text-secondary-foreground mb-6">
-              Quick Links
-            </h4>
-            <ul className="space-y-3 text-sm">
-              {["Home", "Services", "About", "Contact"].map((l) => (
-                <li key={l}>
-                  <a
-                    href={`#${l.toLowerCase()}`}
-                    className="text-secondary-foreground/60 hover:text-primary transition-colors flex items-center gap-2 group"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-primary/50 group-hover:w-2 transition-all" />
-                    {l}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Social */}
           <div>
@@ -99,7 +79,7 @@ const Footer = () => {
             </p>
             <a
               href="tel:+923006338808"
-              className="text-sm text-secondary-foreground/60 leading-relaxed mb-4"
+              className="text-sm text-secondary-foreground/60 leading-relaxed mb-4 hover:text-primary transition-colors"
             >
               +92-300-6897004
             </a>
